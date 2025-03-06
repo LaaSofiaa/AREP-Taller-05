@@ -10,28 +10,37 @@
 <div class="container">
     <h1>Gestión de Propiedades</h1>
 
-    <!-- Sección del formulario -->
+
     <div class="section">
         <h2>Agregar Nueva Propiedad</h2>
         <form id="propertyForm">
-            <input type="text" id="address" placeholder="Dirección" required>
-            <input type="number" id="price" placeholder="Precio" required>
-            <input type="number" id="size" placeholder="Tamaño (m²)" required>
-            <textarea id="description" placeholder="Descripción" required></textarea>
+            <input type="text" id="newAddress" placeholder="Dirección" required>
+            <input type="number" id="newPrice" placeholder="Precio" required>
+            <input type="number" id="newSize" placeholder="Tamaño (m²)" required>
+            <textarea id="newDescription" placeholder="Descripción" required></textarea>
             <button type="submit">Agregar Propiedad</button>
         </form>
     </div>
-
-    <!-- Mensajes de retroalimentación -->
     <div id="message" class="message"></div>
 
-    <!-- Sección de la lista de propiedades -->
     <div class="section">
         <h2>Lista de Propiedades</h2>
-        <ul id="propertyList"></ul>
+        <table id="propertiesTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Dirección</th>
+                <th>Precio</th>
+                <th>Tamaño (m²)</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
