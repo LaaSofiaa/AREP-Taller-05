@@ -11,7 +11,7 @@ function createProperty() {
         description: document.getElementById('newDescription').value
     };
 
-    fetch('http://localhost:8080/api/properties', {
+    fetch('/api/properties', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(property)
@@ -26,7 +26,7 @@ function createProperty() {
 }
 
 function loadProperties() {
-    fetch('http://localhost:8080/api/properties')
+    fetch('/api/properties')
     .then(response => response.json())
     .then(properties => {
         const propertyTableBody = document.querySelector('#propertiesTable tbody');
@@ -52,7 +52,7 @@ function loadProperties() {
 }
 
 function deleteProperty(id) {
-    fetch(`http://localhost:8080/api/properties/${id}`, {
+    fetch(`/api/properties/${id}`, {
         method: 'DELETE'
     })
     .then(() => {
@@ -63,7 +63,7 @@ function deleteProperty(id) {
 }
 
 function editProperty(id) {
-    fetch(`http://localhost:8080/api/properties/${id}`)
+    fetch(`/api/properties/${id}`)
     .then(response => response.json())
     .then(property => {
         document.getElementById('newAddress').value = property.address;
@@ -89,7 +89,7 @@ function updateProperty(id) {
         description: document.getElementById('newDescription').value
     };
 
-    fetch(`http://localhost:8080/api/properties/${id}`, {
+    fetch(`/api/properties/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedProperty)
